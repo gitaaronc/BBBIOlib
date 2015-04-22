@@ -25,11 +25,14 @@ BBBiolib_ADCTSC.o : ${LIB_PATH}BBBiolib_ADCTSC.c ${LIB_PATH}BBBiolib_ADCTSC.h
 
 
 install : libBBBio.a 
-	
+
 
 #---------------------------------------------------
 # Demo
 #---------------------------------------------------
+
+mah : ${DEMO_PATH}Demo_mah/spimah.c libBBBio.a
+	gcc -o mah ${DEMO_PATH}Demo_mah/spimah.c -L ${LIB_PATH} -lBBBio
 
 LED : ${DEMO_PATH}Demo_LED/LED.c libBBBio.a
 	gcc -o LED ${DEMO_PATH}Demo_LED/LED.c -L ${LIB_PATH} -lBBBio
